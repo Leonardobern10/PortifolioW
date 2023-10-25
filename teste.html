@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accordion Effect</title>
+<style>
+    .accordion {
+        background-color: #f9f9f9;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+    }
+
+    .panel {
+        padding: 0 18px;
+        display: none;
+        overflow: hidden;
+        background-color: #ffffff;
+    }
+</style>
+</head>
+<body>
+
+<button class="accordion">Section 1</button>
+<div class="panel">
+  <p>Content for Section 1...</p>
+</div>
+
+<button class="accordion">Section 2</button>
+<div class="panel">
+  <p>Content for Section 2...</p>
+</div>
+
+<button class="accordion">Section 3</button>
+<div class="panel">
+  <p>Content for Section 3...</p>
+</div>
+
+<button class = "accordion"> Section 4</button>
+<div class = "panel">
+    <p>Content for Section 4...</p>
+</div>
+
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
